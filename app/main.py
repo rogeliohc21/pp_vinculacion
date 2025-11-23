@@ -414,9 +414,10 @@ if __name__ == "__main__":
     logger.info(f"🚀 Iniciando servidor en {settings.api_host}:{settings.api_port}")
     
     uvicorn.run(
-        "app.main:app",
-        host=settings.api_host,
-        port=settings.api_port,
-        reload=settings.debug_mode,
-        log_level=settings.log_level.lower()
-    )
+    "pp_vinculacion.app.main:app",
+    host=settings.api_host,
+    port=settings.api_port,
+    reload=settings.debug_mode,
+    log_level=settings.log_level.lower()
+)
+
