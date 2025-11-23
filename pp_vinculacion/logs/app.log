@@ -1,0 +1,46 @@
+2025-10-13 22:32:32,935 - uvicorn.error - INFO - _serve:84 - Started server process [24466]
+2025-10-13 22:32:32,936 - uvicorn.error - INFO - startup:48 - Waiting for application startup.
+2025-10-13 22:32:32,937 - app.main - INFO - lifespan:29 - 🚀 Iniciando aplicación...
+2025-10-13 22:32:32,937 - app.main - INFO - lifespan:30 - Entorno: development
+2025-10-13 22:32:32,937 - app.main - INFO - lifespan:31 - Debug Mode: True
+2025-10-13 22:32:32,938 - app.database - INFO - connect_db:22 - Conectando a MongoDB: mongodb+srv://<db_username>:<hg1qte2W0C14YiGD>@clustervinculacion.kqdiej0.mongodb.net/?retryWrites=true&w=majority&appName=ClusterVinculacion
+2025-10-13 22:33:03,183 - app.database - ERROR - connect_db:34 - ✗ Error al conectar a MongoDB: ac-y5vm97y-shard-00-00.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-y5vm97y-shard-00-02.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-y5vm97y-shard-00-01.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68edd26087556a57daaeeb2b, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-y5vm97y-shard-00-00.kqdiej0.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-y5vm97y-shard-00-00.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-y5vm97y-shard-00-01.kqdiej0.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-y5vm97y-shard-00-01.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-y5vm97y-shard-00-02.kqdiej0.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-y5vm97y-shard-00-02.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-10-13 22:33:03,187 - uvicorn.error - ERROR - send:121 - Traceback (most recent call last):
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/app/main.py", line 34, in lifespan
+    await db.connect_db()
+  File "/Users/rogeliohidalgo/pp_vinculacion/app/database.py", line 27, in connect_db
+    await cls.client.admin.command('ping')
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/synchronous/database.py", line 931, in command
+    with self._client._conn_for_reads(read_preference, session, operation=command_name) as (
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/synchronous/mongo_client.py", line 1885, in _conn_for_reads
+    server = self._select_server(read_preference, session, operation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/synchronous/mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/synchronous/topology.py", line 409, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/synchronous/topology.py", line 387, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/synchronous/topology.py", line 294, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pymongo/synchronous/topology.py", line 344, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: ac-y5vm97y-shard-00-00.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-y5vm97y-shard-00-02.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-y5vm97y-shard-00-01.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68edd26087556a57daaeeb2b, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-y5vm97y-shard-00-00.kqdiej0.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-y5vm97y-shard-00-00.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-y5vm97y-shard-00-01.kqdiej0.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-y5vm97y-shard-00-01.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-y5vm97y-shard-00-02.kqdiej0.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-y5vm97y-shard-00-02.kqdiej0.mongodb.net:27017: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+
+2025-10-13 22:33:03,188 - uvicorn.error - ERROR - startup:59 - Application startup failed. Exiting.

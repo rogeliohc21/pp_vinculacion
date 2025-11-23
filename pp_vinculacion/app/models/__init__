@@ -1,0 +1,458 @@
+Last login: Sun Oct 19 10:36:51 on console
+rogeliohidalgo@MacBook-Pro-de-Rogelio ~ % cd /Users/
+rogeliohidalgo@MacBook-Pro-de-Rogelio /Users % cd rogeliohidalgo/
+rogeliohidalgo@MacBook-Pro-de-Rogelio ~ % cd pp_vinculacion
+rogeliohidalgo@MacBook-Pro-de-Rogelio pp_vinculacion % cd app
+rogeliohidalgo@MacBook-Pro-de-Rogelio app % cd..
+zsh: command not found: cd..
+rogeliohidalgo@MacBook-Pro-de-Rogelio app % cd ..
+rogeliohidalgo@MacBook-Pro-de-Rogelio pp_vinculacion % source venv/bin/activate
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio pp_vinculacion % uvicorn app.main:app --reload
+INFO:     Will watch for changes in these directories: ['/Users/rogeliohidalgo/pp_vinculacion']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1037] using WatchFiles
+INFO:     Started server process [1039]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+INFO:app.main:→ GET /docs
+INFO:app.main:← GET /docs - 200 - 0.001s
+INFO:     127.0.0.1:49237 - "GET /docs HTTP/1.1" 200 OK
+INFO:app.main:→ GET /openapi.json
+INFO:app.main:← GET /openapi.json - 200 - 0.004s
+INFO:     127.0.0.1:49237 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:app.main:→ GET /health
+INFO:app.main:← GET /health - 200 - 0.001s
+INFO:     127.0.0.1:49240 - "GET /health HTTP/1.1" 200 OK
+INFO:app.main:→ GET /api/info
+INFO:app.main:← GET /api/info - 200 - 0.001s
+INFO:     127.0.0.1:49241 - "GET /api/info HTTP/1.1" 200 OK
+INFO:app.main:→ GET /
+INFO:app.main:← GET / - 200 - 0.001s
+INFO:     127.0.0.1:49242 - "GET / HTTP/1.1" 200 OK
+^CINFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1039]
+INFO:     Stopping reloader process [1037]
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio pp_vinculacion % python student.py
+/Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/rogeliohidalgo/pp_vinculacion/student.py': [Errno 2] No such file or directory
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio pp_vinculacion % cd app
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio app % python student.py
+/Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/rogeliohidalgo/pp_vinculacion/app/student.py': [Errno 2] No such file or directory
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio app % cd models
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % python user.py
+Traceback (most recent call last):
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/networks.py", line 949, in import_email_validator
+    import email_validator
+ModuleNotFoundError: No module named 'email_validator'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rogeliohidalgo/pp_vinculacion/app/models/user.py", line 28, in <module>
+    class UserBase(BaseModel):
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_model_construction.py", line 255, in __new__
+    complete_model_class(
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_model_construction.py", line 648, in complete_model_class
+    schema = gen_schema.generate_schema(cls)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 729, in generate_schema
+    schema = self._generate_schema_inner(obj)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 1023, in _generate_schema_inner
+    return self._model_schema(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 856, in _model_schema
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 856, in <dictcomp>
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 1228, in _generate_md_field_schema
+    schema, metadata = self._common_field_schema(name, field_info, decorators)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 1282, in _common_field_schema
+    schema = self._apply_annotations(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 2227, in _apply_annotations
+    schema = get_inner_schema(source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_schema_generation_shared.py", line 83, in __call__
+    schema = self._handler(source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 2203, in inner_handler
+    schema = self._generate_schema_from_get_schema_method(obj, source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 919, in _generate_schema_from_get_schema_method
+    schema = get_schema(
+             ^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/networks.py", line 989, in __get_pydantic_core_schema__
+    import_email_validator()
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/networks.py", line 951, in import_email_validator
+    raise ImportError("email-validator is not installed, run `pip install 'pydantic[email]'`") from e
+ImportError: email-validator is not installed, run `pip install 'pydantic[email]'`
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % pip install pydantic
+Requirement already satisfied: pydantic in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (2.12.1)
+Requirement already satisfied: annotated-types>=0.6.0 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.3 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic) (2.41.3)
+Requirement already satisfied: typing-extensions>=4.14.1 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic) (4.15.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic) (0.4.2)
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % python user.py      
+Traceback (most recent call last):
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/networks.py", line 949, in import_email_validator
+    import email_validator
+ModuleNotFoundError: No module named 'email_validator'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rogeliohidalgo/pp_vinculacion/app/models/user.py", line 28, in <module>
+    class UserBase(BaseModel):
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_model_construction.py", line 255, in __new__
+    complete_model_class(
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_model_construction.py", line 648, in complete_model_class
+    schema = gen_schema.generate_schema(cls)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 729, in generate_schema
+    schema = self._generate_schema_inner(obj)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 1023, in _generate_schema_inner
+    return self._model_schema(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 856, in _model_schema
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 856, in <dictcomp>
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 1228, in _generate_md_field_schema
+    schema, metadata = self._common_field_schema(name, field_info, decorators)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 1282, in _common_field_schema
+    schema = self._apply_annotations(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 2227, in _apply_annotations
+    schema = get_inner_schema(source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_schema_generation_shared.py", line 83, in __call__
+    schema = self._handler(source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 2203, in inner_handler
+    schema = self._generate_schema_from_get_schema_method(obj, source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py", line 919, in _generate_schema_from_get_schema_method
+    schema = get_schema(
+             ^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/networks.py", line 989, in __get_pydantic_core_schema__
+    import_email_validator()
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/pydantic/networks.py", line 951, in import_email_validator
+    raise ImportError("email-validator is not installed, run `pip install 'pydantic[email]'`") from e
+ImportError: email-validator is not installed, run `pip install 'pydantic[email]'`
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % pip install pydantic[email]
+zsh: no matches found: pydantic[email]
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % pip install 'pydantic[email]'
+Requirement already satisfied: pydantic[email] in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (2.12.1)
+Requirement already satisfied: annotated-types>=0.6.0 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic[email]) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.3 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic[email]) (2.41.3)
+Requirement already satisfied: typing-extensions>=4.14.1 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic[email]) (4.15.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from pydantic[email]) (0.4.2)
+Collecting email-validator>=2.0.0 (from pydantic[email])
+  Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+Requirement already satisfied: dnspython>=2.0.0 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from email-validator>=2.0.0->pydantic[email]) (2.8.0)
+Requirement already satisfied: idna>=2.0.0 in /Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages (from email-validator>=2.0.0->pydantic[email]) (3.11)
+Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+Installing collected packages: email-validator
+Successfully installed email-validator-2.3.0
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % python user.py
+/Users/rogeliohidalgo/pp_vinculacion/app/models/user.py:48: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  class UserInDB(UserBase):
+/Users/rogeliohidalgo/pp_vinculacion/app/models/user.py:71: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  class UserResponse(UserBase):
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % uvicorn app.main:app --reload
+INFO:     Will watch for changes in these directories: ['/Users/rogeliohidalgo/pp_vinculacion/app/models']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1251] using WatchFiles
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/_compat.py", line 23, in asyncio_run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/config.py", line 438, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/importer.py", line 22, in import_from_string
+    raise exc from None
+  File "/Users/rogeliohidalgo/pp_vinculacion/venv/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1128, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1142, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'app'
+^CINFO:     Stopping reloader process [1251]
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio models % cd ..
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio app % cd ..
+(venv) rogeliohidalgo@MacBook-Pro-de-Rogelio pp_vinculacion % uvicorn app.main:app --reload
+INFO:     Will watch for changes in these directories: ['/Users/rogeliohidalgo/pp_vinculacion']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [1254] using WatchFiles
+INFO:     Started server process [1256]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+INFO:app.main:→ GET /
+INFO:app.main:← GET / - 200 - 0.001s
+INFO:     127.0.0.1:49297 - "GET / HTTP/1.1" 200 OK
+INFO:app.main:→ GET /health
+INFO:app.main:← GET /health - 200 - 0.001s
+INFO:     127.0.0.1:49298 - "GET /health HTTP/1.1" 200 OK
+INFO:app.main:→ GET /api/info
+INFO:app.main:← GET /api/info - 200 - 0.001s
+INFO:     127.0.0.1:49299 - "GET /api/info HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/models/company.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1256]
+INFO:     Started server process [1324]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/company.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1324]
+INFO:     Started server process [1327]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/company.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1327]
+INFO:     Started server process [1332]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/vacancy.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1332]
+INFO:     Started server process [1334]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/vacancy.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1334]
+INFO:     Started server process [1337]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/vacancy.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1337]
+INFO:     Started server process [1342]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/vacancy.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1342]
+INFO:     Started server process [1343]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/vacancy.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1343]
+INFO:     Started server process [1348]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/match.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1348]
+INFO:     Started server process [1350]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/match.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1350]
+INFO:     Started server process [1352]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/match.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1352]
+INFO:     Started server process [1358]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/match.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1358]
+INFO:     Started server process [1360]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/contact_request.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1360]
+INFO:     Started server process [1365]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/contact_request.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1365]
+INFO:     Started server process [1371]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+INFO:app.main:→ GET /docs
+INFO:app.main:← GET /docs - 200 - 0.001s
+INFO:     127.0.0.1:49328 - "GET /docs HTTP/1.1" 200 OK
+INFO:app.main:→ GET /openapi.json
+INFO:app.main:← GET /openapi.json - 200 - 0.006s
+INFO:     127.0.0.1:49328 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:app.main:→ GET /api/info
+INFO:app.main:← GET /api/info - 200 - 0.001s
+INFO:     127.0.0.1:49330 - "GET /api/info HTTP/1.1" 200 OK
+INFO:app.main:→ GET /health
+INFO:app.main:← GET /health - 200 - 0.001s
+INFO:     127.0.0.1:49332 - "GET /health HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/models/message.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1371]
+INFO:     Started server process [2203]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/message.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2203]
+INFO:     Started server process [2205]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/__init__.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:app.main:🛑 Cerrando aplicación...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2205]
+INFO:     Started server process [2225]
+INFO:     Waiting for application startup.
+INFO:app.main:🚀 Iniciando aplicación...
+INFO:app.main:Entorno: development
+INFO:app.main:✓ Aplicación lista
+INFO:     Application startup complete.
+
